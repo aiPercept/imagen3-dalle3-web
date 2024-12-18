@@ -26,6 +26,7 @@ const Home = () => {
       setIsLoading(false);
     }
   };
+  //done
 
   const handleGenerateImage = async () => {
     if (!prompt.trim()) {
@@ -43,11 +44,12 @@ const Home = () => {
         body: JSON.stringify({ prompt }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
         throw new Error("Failed to generate image.");
       }
 
-      const data = await response.json();
       setImageUrl(data.imageUrl);
     } catch (error) {
       console.error(error.message);
@@ -74,7 +76,7 @@ const Home = () => {
           className={`w-full py-2 px-4 rounded-md text-white ${isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
             }`}
         >
-          {isLoading ? "Generating..." : "Generate Image"}
+          {isLoading ? "Generating..." : "Generate From OpenAI"}
         </button>
         <button
           onClick={generateImage}
