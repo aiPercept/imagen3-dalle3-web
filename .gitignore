@@ -1,0 +1,45 @@
+google-res.json
+imagenvenv
+# Ignore node_modules across all directories
+**/node_modules/
+
+# Ignore .env files across specific directories
+api/.env
+api/node_modules
+client/.env
+client/node_modules
+client-new/.env
+client-new/node_modules
+
+# MacOS system files
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Production build directories
+dist/
+build/
+
+# Editor settings
+.idea/
+.vscode/
+*.swp
+
+# Optional npm cache directory
+.npm
+
+# Other OS generated files
+Thumbs.db
+*.bak
+
+# Environment variable files
+.env
+.env.*
